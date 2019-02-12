@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">EVA1_7_EVENTOS_RECURSOS</string>
+
+    <string name="idioma_es_en">Spanish</string>
+    <string name="idioma_en_en">English</string>
+    <string name="nom_en">First name:</string>
+    <string name="ape_en">Last name:</string>
+    <string name="hint_nom_en">Put your name</string>
+    <string name="hint_ape_en">Put your last name</string>
+
+    <string name="idioma_es_es">Español</string>
+    <string name="idioma_en_es">Inglés</string>
+    <string name="nom_es">Nombre:</string>
+    <string name="ape_es">Apellido:</string>
+    <string name="hint_nom_es">Escribe tu nombre</string>
+    <string name="hint_ape_es">Escribe tu apellido</string>
+</resources>
