@@ -1,10 +1,14 @@
 package com.example.eva1_12__listas_personalizadas;
 
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements ListView.OnItemClickListener{
@@ -32,6 +36,38 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this,acClimaCd[position].getCiudad(),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this,acClimaCd[position].getCiudad(),Toast.LENGTH_SHORT).show();
+        final Dialog dlgMyDialog;
+        dlgMyDialog = new Dialog(this);
+        dlgMyDialog.setContentView(R.layout.layout_dialogo);
+
+        ImageView imgVwClima;
+        TextView txtVwCiudad,txtVwTemp,txtVwClima,txtVwDesc;
+        Button btnOK;
+
+        imgVwClima = dlgMyDialog.findViewById(R.id.imgVwClima);
+        txtVwCiudad = dlgMyDialog.findViewById(R.id.txtVwCiudad);
+        txtVwTemp = dlgMyDialog.findViewById(R.id.txtVwTemp);
+        txtVwClima = dlgMyDialog.findViewById(R.id.txtVwClima);
+        txtVwDesc = dlgMyDialog.findViewById(R.id.txtVwDesc);
+        btnOK = dlgMyDialog.findViewById(R.id.btnOK);
+
+        imgVwClima.setImageResource(acClimaCd[position].getImagen_clima());
+        txtVwCiudad.setText(acClimaCd[position].getCiudad());
+        txtVwTemp.setText(acClimaCd[position].getTemperatura()+"*C");
+        txtVwClima.setText(acClimaCd[position].getClima());
+        txtVwDesc.setText(acClimaCd[position].getDesc_clima());
+
+        btnOK.setText("OK");
+        btnOK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),"Dale",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        dlgMyDialog.show();
+
+
     }
 }
